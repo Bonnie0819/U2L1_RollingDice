@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function initialize() {
+            die1 = 0;
+            die2 = 0;
+            total = 0;
+            diceTotal = document.getElementById("t");
+            r1 = document.getElementById("d1");
+            r2 = document.getElementById("d2");
+
+            display();
+        }
+        function roll() {
+            die1 = Math.floor(Math.random()*6 +1);
+            die2 = Math.floor(Math.random()*6 +1);
+            total = die1 + die2;
+            display();
+        }
+        function display() {
+            r1.innerHTML = "Die 1: " + die1;
+            r2.innerHTML = "Die 2: " + die2;
+            diceTotal.innerHTML = "The total of both dice is: " + total;
+
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <h1>Dice Roll</h1>
+    <button onclick = "roll();">Roll</button>
+    <p id ="d1">Die1:</p>
+    <p id ="d2">Die2:</p>
+    <p id ="t">Total:</p>
+
+</body>
+</html>
